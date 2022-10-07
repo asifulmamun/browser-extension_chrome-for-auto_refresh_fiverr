@@ -1,0 +1,10 @@
+#time_btn{
+    display: flex;
+    flex-wrap: wrap;
+}
+button{
+    flex-grow: 1;
+    width: 31%;
+    margin: 0.3%;
+    cursor: pointer;
+}

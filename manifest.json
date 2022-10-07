@@ -2,10 +2,22 @@
   "name": "Browser Refresher Fiverr",
   "version": "1.0",
   "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["https://*.fiverr.com/*"],
-      "js": ["content.js"]
+      "matches": ["http://*.127.0.0.1/*"],
+      "js": ["app.js"]
     }
-  ]
+  ],
+  "permissions": [
+    "storage",
+    "scripting",
+    "tabs",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
 }
