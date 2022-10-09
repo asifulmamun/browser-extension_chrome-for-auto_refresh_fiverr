@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./popup.css">
     <title>AUTO REFRESHER BY ASIFULMAMUN - AL MAMUN</title>
 </head>
 
 <body>
 
-
-    <div>
+    <!-- ========= FORM FOR COLLECT DATA ============= -->
+    <div id="data_form">
         <form action="">
             <label for="rurlone">Redirect URL 01: </label>
             <input type="text" name="rurlone" id="rurlone" value="asifulmamun.info">
@@ -24,63 +24,73 @@
         </form>
     </div>
 
+
+    <!-- ========= ACTIVATE HOUR'S ============= -->
     <!-- <div>
-        <h3>Select running hour:</h3>
+        <h3>Select activate hour:</h3>
         <div id="time_btn">
-            <button id="btn_1" value="1" onclick="btn_time_clicked(this)">1 AM</button>
-            <button id="btn_2" value="2" onclick="btn_time_clicked(this)">2 AM</button>
-            <button id="btn_3" value="3" onclick="btn_time_clicked(this)">3 AM</button>
-            <button id="btn_4" value="4" onclick="btn_time_clicked(this)">4 AM</button>
-            <button id="btn_5" value="5" onclick="btn_time_clicked(this)">5 AM</button>
-            <button id="btn_6" value="6" onclick="btn_time_clicked(this)">6 AM</button>
-            <button id="btn_7" value="7" onclick="btn_time_clicked(this)">7 AM</button>
-            <button id="btn_8" value="8" onclick="btn_time_clicked(this)">8 AM</button>
-            <button id="btn_9" value="9" onclick="btn_time_clicked(this)">9 AM</button>
-            <button id="btn_10" value="10" onclick="btn_time_clicked(this)">10 AM</button>
-            <button id="btn_11" value="11" onclick="btn_time_clicked(this)">11 AM</button>
-            <button id="btn_12" value="12" onclick="btn_time_clicked(this)">12 PM</button>
-            <button id="btn_13" value="13" onclick="btn_time_clicked(this)">1 PM</button>
-            <button id="btn_14" value="14" onclick="btn_time_clicked(this)">2 PM</button>
-            <button id="btn_15" value="15" onclick="btn_time_clicked(this)">3 PM</button>
-            <button id="btn_16" value="16" onclick="btn_time_clicked(this)">4 PM</button>
-            <button id="btn_17" value="17" onclick="btn_time_clicked(this)">5 PM</button>
-            <button id="btn_18" value="18" onclick="btn_time_clicked(this)">6 PM</button>
-            <button id="btn_19" value="19" onclick="btn_time_clicked(this)">7 PM</button>
-            <button id="btn_20" value="20" onclick="btn_time_clicked(this)">8 PM</button>
-            <button id="btn_21" value="21" onclick="btn_time_clicked(this)">9 PM</button>
-            <button id="btn_22" value="22" onclick="btn_time_clicked(this)">10 PM</button>
-            <button id="btn_23" value="23" onclick="btn_time_clicked(this)">11 PM</button>
-            <button id="btn_0" value="24" onclick="btn_time_clicked(this)">12 AM</button>
+            <button id="btn_1" title="1" value="1">1 AM</button>
+            <button id="btn_2" title="2" value="2">2 AM</button>
+            <button id="btn_3" title="3" value="3">3 AM</button>
+            <button id="btn_4" title="4" value="4">4 AM</button>
+            <button id="btn_5" title="5" value="5">5 AM</button>
+            <button id="btn_6" title="6" value="6">6 AM</button>
+            <button id="btn_7" title="7" value="7">7 AM</button>
+            <button id="btn_8" title="8" value="8">8 AM</button>
+            <button id="btn_9" title="9" value="9">9 AM</button>
+            <button id="btn_10" title="10" value="10">10 AM</button>
+            <button id="btn_11" title="11" value="11">11 AM</button>
+            <button id="btn_12" title="12" value="12">12 PM</button>
+            <button id="btn_13" title="13" value="13">1 PM</button>
+            <button id="btn_14" title="14" value="14">2 PM</button>
+            <button id="btn_15" title="15" value="15">3 PM</button>
+            <button id="btn_16" title="16" value="16">4 PM</button>
+            <button id="btn_17" title="17" value="17">5 PM</button>
+            <button id="btn_18" title="18" value="18">6 PM</button>
+            <button id="btn_19" title="19" value="19">7 PM</button>
+            <button id="btn_20" title="20" value="20">8 PM</button>
+            <button id="btn_21" title="21" value="21">9 PM</button>
+            <button id="btn_22" title="22" value="22">10 PM</button>
+            <button id="btn_23" title="23" value="23">11 PM</button>
+            <button id="btn_0" title="0" value="0">12 AM</button>
         </div>
     </div> -->
 
-    <div>
-        <h3>Select running hour:</h3>
-        <div id="time_btn">
-            <button id="btn_1" value="1" class="pbtn" type="button">1 AM</button>
-            <button id="btn_2" value="2" class="pbtn" type="button">2 AM</button>
-            <button id="btn_3" value="3" class="pbtn" type="button">3 AM</button>
-            <button id="btn_4" value="4" onclick="myFunction()">4 AM</button>
-            <button id="btn_5" value="5" onclick="btn_time_clicked(this)">5 AM</button>
-            <button id="btn_6" value="6" onclick="btn_time_clicked(this)">6 AM</button>
-            <button id="btn_7" value="7" onclick="btn_time_clicked(this)">7 AM</button>
-            <button id="btn_8" value="8" onclick="btn_time_clicked(this)">8 AM</button>
-            <button id="btn_9" value="9" onclick="btn_time_clicked(this)">9 AM</button>
-            <button id="btn_10" value="10" onclick="btn_time_clicked(this)">10 AM</button>
-            <button id="btn_11" value="11" onclick="btn_time_clicked(this)">11 AM</button>
-            <button id="btn_12" value="12" onclick="btn_time_clicked(this)">12 PM</button>
-            <button id="btn_13" value="13" onclick="btn_time_clicked(this)">1 PM</button>
-            <button id="btn_14" value="14" onclick="btn_time_clicked(this)">2 PM</button>
-            <button id="btn_15" value="15" onclick="btn_time_clicked(this)">3 PM</button>
-            <button id="btn_16" value="16" onclick="btn_time_clicked(this)">4 PM</button>
-            <button id="btn_17" value="17" onclick="btn_time_clicked(this)">5 PM</button>
-            <button id="btn_18" value="18" onclick="btn_time_clicked(this)">6 PM</button>
-            <button id="btn_19" value="19" onclick="btn_time_clicked(this)">7 PM</button>
-            <button id="btn_20" value="20" onclick="btn_time_clicked(this)">8 PM</button>
-            <button id="btn_21" value="21" onclick="btn_time_clicked(this)">9 PM</button>
-            <button id="btn_22" value="22" onclick="btn_time_clicked(this)">10 PM</button>
-            <button id="btn_23" value="23" onclick="btn_time_clicked(this)">11 PM</button>
-            <button id="btn_0" value="24" onclick="btn_time_clicked(this)">12 AM</button>
+    <div class="circle_timer">
+        <div class="circle_sub">
+            <h3>Time Slot Night To Mid Day</h3>
+            <ul class="circle-container">
+                <h4>Night-Day</h4>
+                <li><button id="btn_3" title="3" value="3">3 AM</button></li>
+                <li><button id="btn_4" title="4" value="4">4 AM</button></li>
+                <li><button id="btn_5" title="5" value="5">5 AM</button></li>
+                <li><button id="btn_6" title="6" value="6">6 AM</button></li>
+                <li><button id="btn_7" title="7" value="7">7 AM</button></li>
+                <li><button id="btn_8" title="8" value="8">8 AM</button></li>
+                <li><button id="btn_9" title="9" value="9">9 AM</button></li>
+                <li><button id="btn_10" title="10" value="10">10 AM</button></li>
+                <li><button id="btn_11" title="11" value="11">11 AM</button></li>
+                <li><button id="btn_12" title="12" value="12">12 PM</button></li>
+                <li><button id="btn_1" title="1" value="1">1 AM</button></li>
+                <li><button id="btn_2" title="2" value="2">2 AM</button></li>
+            </ul>
+            <br/><br/><br/>
+            <h3>Time Slot Mid Day to Night</h3>
+            <ul class="circle-container">
+                <h4>Day-Night</h4>
+                <li><button id="btn_15" title="15" value="15">3 PM</button></li>
+                <li><button id="btn_16" title="16" value="16">4 PM</button></li>
+                <li><button id="btn_17" title="17" value="17">5 PM</button></li>
+                <li><button id="btn_18" title="18" value="18">6 PM</button></li>
+                <li><button id="btn_19" title="19" value="19">7 PM</button></li>
+                <li><button id="btn_20" title="20" value="20">8 PM</button></li>
+                <li><button id="btn_21" title="21" value="21">9 PM</button></li>
+                <li><button id="btn_22" title="22" value="22">10 PM</button></li>
+                <li><button id="btn_23" title="23" value="23">11 PM</button></li>
+                <li><button id="btn_0" title="0" value="0">12 AM</button></li>
+                <li><button id="btn_13" title="13" value="13">1 PM</button></li>
+                <li><button id="btn_14" title="14" value="14">2 PM</button></li>
+            </ul>
         </div>
     </div>
 

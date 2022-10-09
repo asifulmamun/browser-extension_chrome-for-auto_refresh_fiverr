@@ -1,21 +1,27 @@
-// data
-
 // Set the value to form
 chrome.storage.sync.get([
     'tBoxUrlOne',
-    'tBoxUrlTwo'
-], (tBoxData) => {
+    'tBoxUrlTwo',
+    'activated_time'
+], (data) => {
 
     // set to local storage in chrome for variable
-    localStorage.setItem('rurlone', tBoxData.tBoxUrlOne);
-    localStorage.setItem('rurltwo', tBoxData.tBoxUrlTwo);
+    localStorage.setItem('rurlone', data.tBoxUrlOne);
+    localStorage.setItem('rurltwo', data.tBoxUrlTwo);
+    localStorage.setItem('activated_time', data.activated_time);
 
 });
 
+// data
 var rurlone = localStorage.getItem('rurlone');
 var rurltwo = localStorage.getItem('rurltwo');
+var activated_time = JSON.parse(localStorage.getItem('activated_time'));
+
 console.log('rurlone: ' + rurlone);
 console.log('rurltwo: ' + rurltwo);
+console.log('activated_time: ' + activated_time);
+
+
 
 /* 
     GLOBAL VARIABLE
@@ -23,15 +29,10 @@ console.log('rurltwo: ' + rurltwo);
 
 var new_tab_url_1 = 'https://www.fiverr.com/seller_dashboard';
 var new_tab_url_2 = 'https://www.fiverr.com/inbox';
+var offline_url = 'http://localhost/fiverr-extension.html';
 
 var new_tab_url_1 = 'http://127.0.0.1';
 var new_tab_url_2 = 'http://127.0.0.1';
-
-var start_do_action_exec_time_1 = 7; // START TIME TO EXECUTE   - 1
-var end_do_action_exec_time_1 = 23; // END TIME FOR EXECUTE     - 1
-
-var start_do_action_exec_time_2 = 0; // START TIME TO EXECUTE   - 2
-var end_do_action_exec_time_2 = 1; // START TIME TO EXECUTE     - 2
 
 let time_from = 300; // min seconde for refresh
 let time_to = 1200; // max second for refresh
@@ -153,20 +154,11 @@ function trigger_refrsh_redrct() {
 ==============================================
 */
 
-if (time_for_action >= start_do_action_exec_time_1 && time_for_action <= end_do_action_exec_time_1) {
-
+if(activated_time.indexOf(time_for_action) > -1){
     trigger_refrsh_redrct();
-
-}
-else if (time_for_action >= start_do_action_exec_time_2 && time_for_action <= end_do_action_exec_time_2) {
-
-    trigger_refrsh_redrct();
-
-}
-else {
-
+}else{
     console.log('Sleeping Time');
-
+    window.location.href = offline_url;
 }
 
 

@@ -1,0 +1,157 @@
+/* 
+    ------------------
+    FORM FOR COLLECT DATA 
+    ------------------
+*/
+#data_form>form>* {
+    display: block;
+}
+
+#data_form>form>label {
+    margin-top: 5px;
+}
+
+#data_form>form>input[type=button] {
+    margin-top: 10px;
+    background-color: #5a5959;
+    border: none;
+}
+
+
+/* 
+    ------------------
+    ACTIVATE HOUR'S
+    ------------------
+ */
+
+
+/* ======== V1.0 ======== */
+/* #time_btn{
+    display: flex;
+    flex-wrap: wrap;
+}
+button{
+    flex-grow: 1;
+    width: 31%;
+    margin: 0.3%;
+    cursor: pointer;
+}
+*/
+
+
+/* ========V2.0 ======== */
+.circle_timer {
+    position: relative;
+    width: 35em;
+}
+
+.circle_sub {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle_sub>h3 {
+    text-align: center;
+    padding: 14px 0px;
+    background: #121212;
+    color: red;
+    text-transform: uppercase;
+}
+
+.circle-container {
+    position: relative;
+    width: 30em;
+    height: 20em;
+    padding: 0;
+    list-style: none;
+    margin-right: 5em;
+}
+
+.circle-container>* {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 0.3s;
+}
+
+.circle-container>h4 {
+    left: 45%;
+    font-size: 24px;
+    color: #000000e0;
+    transform: translate(0em, -0.6em) !important;
+}
+
+.circle-container>li:hover {
+    z-index: 999;
+}
+
+.circle-container button {
+    display: block;
+    max-width: 100%;
+    border-radius: 50%;
+    border: none;
+    transition: .3s;
+    width: 60px;
+    height: 60px;
+    box-shadow: inset -6px -10px 6px -2px #b7b7b7;
+    cursor: pointer;
+    background: #11160f;
+    color: red;
+    box-shadow: 5px 9px 20px 1px #343333;
+}
+
+.circle-container button:hover {
+    background: #27542c;
+    color: #ffffff;
+    text-shadow: 5px 5px 7px #000000;
+    box-shadow: 5px 9px 20px 1px #322e30;
+}
+
+.circle-container>*:nth-of-type(1) {
+    transform: rotate(0deg) translate(8em) rotate(0deg);
+}
+
+.circle-container>*:nth-of-type(2) {
+    transform: rotate(30deg) translate(8em) rotate(-30deg);
+}
+
+.circle-container>*:nth-of-type(3) {
+    transform: rotate(60deg) translate(8em) rotate(-60deg);
+}
+
+.circle-container>*:nth-of-type(4) {
+    transform: rotate(90deg) translate(8em) rotate(-90deg);
+}
+
+.circle-container>*:nth-of-type(5) {
+    transform: rotate(120deg) translate(8em) rotate(-120deg);
+}
+
+.circle-container>*:nth-of-type(6) {
+    transform: rotate(150deg) translate(8em) rotate(-150deg);
+}
+
+.circle-container>*:nth-of-type(7) {
+    transform: rotate(180deg) translate(8em) rotate(-180deg);
+}
+
+.circle-container>*:nth-of-type(8) {
+    transform: rotate(210deg) translate(8em) rotate(-210deg);
+}
+
+.circle-container>*:nth-of-type(9) {
+    transform: rotate(240deg) translate(8em) rotate(-240deg);
+}
+
+.circle-container>*:nth-of-type(10) {
+    transform: rotate(270deg) translate(8em) rotate(-270deg);
+}
+
+.circle-container>*:nth-of-type(11) {
+    transform: rotate(300deg) translate(8em) rotate(-300deg);
+}
+
+.circle-container>*:nth-of-type(12) {
+    transform: rotate(330deg) translate(8em) rotate(-330deg);
+}
