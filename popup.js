@@ -7,7 +7,7 @@
 var active_time = []; // global array changable
 var activated_time = JSON.parse(localStorage.getItem('activated_time')); // get from local storage and convert to json to array
 active_time = active_time.concat(activated_time); // array added to changable array
-console.log(active_time);
+console.log(activated_time);  //activated time
 
 // time slot button get value and set in array
 function btn_time_clicked(want_push) {
@@ -19,12 +19,18 @@ function btn_time_clicked(want_push) {
         active_time.sort(function (a, b) { return a - b }); // sorting
         console.log(active_time); // printing
 
+        document.getElementById(`btn_${want_push}`).style.background = '#27542c'; // set color
+        document.getElementById(`btn_${want_push}`).style.color = '#fff'; // set color
+
     } else if (active_time.indexOf(want_push) !== -1) {
 
         active_time.splice(active_time.indexOf(want_push), 1); // remove data value if clicked and  exist, this value
 
         active_time.sort(function (a, b) { return a - b }); // sorting
         console.log(active_time); // printing
+
+        document.getElementById(`btn_${want_push}`).style.background = '#11160f'; // set default color
+        document.getElementById(`btn_${want_push}`).style.color = 'red'; // set default color
     }
 
     // localStorage.setItem('runtime', JSON.stringify(active_time));
@@ -33,6 +39,21 @@ function btn_time_clicked(want_push) {
     localStorage.setItem('activated_time', activated_time);
 
 }
+
+
+/* 
+    =================================
+    ACTIVATED TIME BUTTON DESIGN
+    =================================
+*/
+    for(var i = 0; i <= active_time.length-1; i++){
+
+        // console.log(activated_time[i]);
+
+        document.getElementById(`btn_${activated_time[i]}`).style.background = '#27542c'; // set default color
+        document.getElementById(`btn_${activated_time[i]}`).style.color = '#fff'; // set default color
+
+    }
 
 
 /* 
@@ -146,30 +167,30 @@ document.getElementById('btn_0').addEventListener('click', function () {
     ===============================
 */
 
-document.getElementById('submit').addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+// document.getElementById('submit').addEventListener("click", async () => {
+//     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-    // store url
-    let tBoxUrlOne = document.getElementById('rurlone').value;
-    chrome.storage.sync.set({ tBoxUrlOne });
-    // console.log(tBoxUrlOne);
+//     // store url
+//     let tBoxUrlOne = document.getElementById('rurlone').value;
+//     chrome.storage.sync.set({ tBoxUrlOne });
+//     // console.log(tBoxUrlOne);
 
-    // store url
-    let tBoxUrlTwo = document.getElementById('rurltwo').value;
-    chrome.storage.sync.set({ tBoxUrlTwo });
-    // console.log(tBoxUrlTwo);
+//     // store url
+//     let tBoxUrlTwo = document.getElementById('rurltwo').value;
+//     chrome.storage.sync.set({ tBoxUrlTwo });
+//     // console.log(tBoxUrlTwo);
 
-});
+// });
 
-// Get the value to form
-chrome.storage.sync.get([
-    'tBoxUrlOne',
-    'tBoxUrlTwo'
-], (tBoxData) => {
+// // Get the value to form
+// chrome.storage.sync.get([
+//     'tBoxUrlOne',
+//     'tBoxUrlTwo'
+// ], (tBoxData) => {
 
-    document.getElementById('rurlone').value = tBoxData.tBoxUrlOne;
-    document.getElementById('rurltwo').value = tBoxData.tBoxUrlTwo;
+//     document.getElementById('rurlone').value = tBoxData.tBoxUrlOne;
+//     document.getElementById('rurltwo').value = tBoxData.tBoxUrlTwo;
 
-    // console.log(tBoxData);
+//     // console.log(tBoxData);
 
-});
+// });

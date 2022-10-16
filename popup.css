@@ -3,7 +3,7 @@
     FORM FOR COLLECT DATA 
     ------------------
 */
-#data_form>form>* {
+/* #data_form>form>* {
     display: block;
 }
 
@@ -15,7 +15,7 @@
     margin-top: 10px;
     background-color: #5a5959;
     border: none;
-}
+} */
 
 
 /* 

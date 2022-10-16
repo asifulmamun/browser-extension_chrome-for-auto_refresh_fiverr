@@ -1,41 +1,28 @@
 // Set the value to form
 chrome.storage.sync.get([
-    'tBoxUrlOne',
-    'tBoxUrlTwo',
+    // 'tBoxUrlOne',
+    // 'tBoxUrlTwo',
     'activated_time'
 ], (data) => {
 
     // set to local storage in chrome for variable
-    localStorage.setItem('rurlone', data.tBoxUrlOne);
-    localStorage.setItem('rurltwo', data.tBoxUrlTwo);
+    // localStorage.setItem('rurlone', data.tBoxUrlOne);
+    // localStorage.setItem('rurltwo', data.tBoxUrlTwo);
     localStorage.setItem('activated_time', data.activated_time);
 
 });
 
 // data
-var rurlone = localStorage.getItem('rurlone');
-var rurltwo = localStorage.getItem('rurltwo');
+// var rurlone = localStorage.getItem('rurlone');
+// var rurltwo = localStorage.getItem('rurltwo');
 var activated_time = JSON.parse(localStorage.getItem('activated_time'));
+var offline_url = '//asifulmamun.github.io/data/visit/fiverr-extension.html'; // sleeping time url when offline
+let time_from = 1; // min minute
+let time_to = 3; // max minute
 
-console.log('rurlone: ' + rurlone);
-console.log('rurltwo: ' + rurltwo);
+// console.log('rurlone: ' + rurlone);
+// console.log('rurltwo: ' + rurltwo);
 console.log('activated_time: ' + activated_time);
-
-
-
-/* 
-    GLOBAL VARIABLE
-*/
-
-var new_tab_url_1 = 'https://www.fiverr.com/seller_dashboard';
-var new_tab_url_2 = 'https://www.fiverr.com/inbox';
-var offline_url = 'http://localhost/fiverr-extension.html';
-
-var new_tab_url_1 = 'http://127.0.0.1';
-var new_tab_url_2 = 'http://127.0.0.1';
-
-let time_from = 300; // min seconde for refresh
-let time_to = 1200; // max second for refresh
 
 
 /* 
@@ -72,39 +59,18 @@ console.log('The local time is now 24hrs = ' + time_for_action);
 */
 function refresh_me(time_from, time_to) {
 
-    let rfrsh_sec = 1000 * Math.floor(Math.random() * time_to) + 1000 * time_from; // 1000 nano second multiple with number and give second
+    let rfrsh_sec = 1000 * 60 * Math.floor(Math.random() * eval(time_to - time_from + 1) + time_from);
 
     console.log(`I'm refreshing you in ${Math.floor(
-        eval((rfrsh_sec / 1000) / 60)
+        eval(((rfrsh_sec / 1000) / 60))
     )
         } min`);
+
     setTimeout(function () {
 
         location.reload();
 
     }, rfrsh_sec);
-}
-
-
-
-/*
-    =======================================
-    Create new tab and close new tab
-    =======================================
-*/
-function new_tab_1(new_tab_url_1) {
-
-    // window.open(new_tab_url_1, "_blank");
-    // open(new_tab_url_1, '_self').close(); // Open new tab with url and close current tab
-    window.location.href = new_tab_url_1;
-}
-
-function new_tab_2(new_tab_url_2) {
-
-    // window.open(new_tab_url_2, "_blank");
-    // open(new_tab_url_2, '_self').close(); // Open new tab with url and close current tab
-    window.location.href = new_tab_url_2;
-
 }
 
 
@@ -127,7 +93,8 @@ function trigger_refrsh_redrct() {
     }
     else if (do_action == 2) {
 
-        new_tab_1(new_tab_url_1);
+        refresh_me(time_from, time_to);
+        // new_tab_1(new_tab_url_1);
 
     }
     else if (do_action == 3) {
@@ -137,7 +104,8 @@ function trigger_refrsh_redrct() {
     }
     else if (do_action == 4) {
 
-        new_tab_2(new_tab_url_2);
+        refresh_me(time_from, time_to);
+        // new_tab_2(new_tab_url_2);
 
     }
     else if (do_action == 5) {
@@ -154,11 +122,10 @@ function trigger_refrsh_redrct() {
 ==============================================
 */
 
-if(activated_time.indexOf(time_for_action) > -1){
+if (activated_time.indexOf(time_for_action) > -1) {
     trigger_refrsh_redrct();
-}else{
+} else {
     console.log('Sleeping Time');
     window.location.href = offline_url;
 }
-
 
