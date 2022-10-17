@@ -1,19 +1,18 @@
 {
-  "name": "Browser Refresher Fiverr",
+  "name": "Auto Refresher for Fiverr",
   "version": "1.0",
   "manifest_version": 3,
-  "icons": {
-    "16": "icon16.png",
-    "48": "icon48.png",
-    "128": "icon128.png"
-  },
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["http://*.127.0.0.1/*"],
-      "js": ["app.js"]
+      "matches": [
+        "http://*.127.0.0.1/*"
+      ],
+      "js": [
+        "app.js"
+      ]
     }
   ],
   "permissions": [
@@ -24,5 +23,10 @@
   ],
   "action": {
     "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "./media/icon/fiverr-refresher-icon-16.png",
+    "48": "./media/icon/fiverr-refresher-icon-48.png",
+    "128": "./media/icon/fiverr-refresher-icon-128.png"
   }
 }
