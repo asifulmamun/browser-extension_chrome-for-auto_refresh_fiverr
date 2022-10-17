@@ -17,12 +17,12 @@ chrome.storage.sync.get([
 // var rurltwo = localStorage.getItem('rurltwo');
 var activated_time = JSON.parse(localStorage.getItem('activated_time'));
 var offline_url = '//asifulmamun.github.io/data/visit/fiverr-extension.html'; // sleeping time url when offline
-let time_from = 1; // min minute
-let time_to = 3; // max minute
+let time_from = 10; // min minute
+let time_to = 15; // max minute
 
 // console.log('rurlone: ' + rurlone);
 // console.log('rurltwo: ' + rurltwo);
-console.log('activated_time: ' + activated_time);
+// console.log('activated_time: ' + activated_time);
 
 
 /* 
@@ -49,7 +49,7 @@ function calcTime(city, offset) {
     return nd.toLocaleString();
 }
 const time_for_action = new Date(calcTime('Dhaka', '+6')).getHours(); // get the time 24hrs UTC
-console.log('The local time is now 24hrs = ' + time_for_action);
+// console.log('The local time is now 24hrs = ' + time_for_action);
 
 
 /*
