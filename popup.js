@@ -47,7 +47,13 @@ function btn_time_clicked(want_push) {
     =================================
 */
 
-    if(active_time !== null || activated_time !== ""){
+    if(active_time == null || activated_time == ""){
+
+        console.log('Active time not selected, aticve_time is null');
+
+    }
+    else {
+        
         for(var i = 0; i <= active_time.length-1; i++){
 
             // console.log(activated_time[i]);
