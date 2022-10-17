@@ -8,7 +8,7 @@
   "content_scripts": [
     {
       "matches": [
-        "http://*.127.0.0.1/*"
+        "http://*.fiverr.com/*"
       ],
       "js": [
         "app.js"
