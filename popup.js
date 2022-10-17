@@ -46,14 +46,18 @@ function btn_time_clicked(want_push) {
     ACTIVATED TIME BUTTON DESIGN
     =================================
 */
-    for(var i = 0; i <= active_time.length-1; i++){
 
-        // console.log(activated_time[i]);
+    if(active_time !== null || activated_time !== ""){
+        for(var i = 0; i <= active_time.length-1; i++){
 
-        document.getElementById(`btn_${activated_time[i]}`).style.background = '#27542c'; // set default color
-        document.getElementById(`btn_${activated_time[i]}`).style.color = '#fff'; // set default color
-
+            // console.log(activated_time[i]);
+    
+            document.getElementById(`btn_${activated_time[i]}`).style.background = '#27542c'; // set default color
+            document.getElementById(`btn_${activated_time[i]}`).style.color = '#fff'; // set default color
+    
+        }
     }
+    
 
 
 /* 
