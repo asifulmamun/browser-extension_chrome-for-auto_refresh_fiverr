@@ -7,7 +7,11 @@
 var active_time = []; // global array changable
 var activated_time = JSON.parse(localStorage.getItem('activated_time')); // get from local storage and convert to json to array
 active_time = active_time.concat(activated_time); // array added to changable array
-console.log(activated_time);  //activated time
+// console.log(activated_time);  //activated time
+// console.log(active_time);
+
+
+
 
 // time slot button get value and set in array
 function btn_time_clicked(want_push) {
@@ -47,22 +51,19 @@ function btn_time_clicked(want_push) {
     =================================
 */
 
-    if(active_time == null || activated_time == ""){
 
-        console.log('Active time not selected, aticve_time is null');
 
-    }
-    else {
+
         
-        for(var i = 0; i <= active_time.length-1; i++){
+	for(var i = 0; i <= active_time.length-1; i++){
+	
+		 // console.log(active_time[i]);
 
-            // console.log(activated_time[i]);
-    
-            document.getElementById(`btn_${activated_time[i]}`).style.background = '#27542c'; // set default color
-            document.getElementById(`btn_${activated_time[i]}`).style.color = '#fff'; // set default color
-    
-        }
-    }
+		document.getElementById(`btn_${active_time[i]}`).style.background = '#27542c'; // set default color
+		document.getElementById(`btn_${active_time[i]}`).style.color = '#fff'; // set default color
+
+	}
+
     
 
 
